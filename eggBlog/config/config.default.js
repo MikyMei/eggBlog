@@ -26,6 +26,15 @@ module.exports = appInfo => {
       },
     },
   };
+  exports.validate = {
+    // convert: false,
+    // validateRoot: false,
+  };
+
+  exports.jwt = {
+    secret: "never"
+  };
+
 
 
 
@@ -39,6 +48,7 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+    baseRouter:'/api/v1'
   };
 
   return {
