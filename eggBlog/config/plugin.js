@@ -17,3 +17,10 @@ exports.mongoose = {
     package: 'egg-mongoose',
 };
 
+/**
+ * 开启跨域
+ * */
+exports.cors = {
+    enable: true,
+    package: 'egg-cors',
+};

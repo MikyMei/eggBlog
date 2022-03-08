@@ -18,6 +18,24 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  exports.mongoose = {
+    client: {
+      url: 'mongodb://127.0.0.1:exports/eggDemo',
+      options: {
+        useUnifiedTopology: true,
+      },
+    },
+  };
+
+
+
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  }
+  ;
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
