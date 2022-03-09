@@ -4,7 +4,7 @@
  * @param {Egg.Application} app - egg application
  */
 module.exports = app => {
-    const {router, controller} = app;
+    const {router, controller, jwt} = app;
 
 
 
@@ -18,10 +18,10 @@ module.exports = app => {
     /**
      * 标签的增删改查
      * */
-    router.resources('tags', baseRouter +'/tags', controller.tags);
+    router.resources('tags', baseRouter +'/tags',jwt,  controller.tags);
 
 
-    router.delete('/admin/deleteUser', controller.admin.deleteOneUser);
+    router.delete('/admin/deleteUser',jwt, controller.admin.deleteOneUser);
     router.get('/admin/findOneUser', controller.admin.findOneUser);
     router.post('/admin/updateAllUser', controller.admin.updateAllUser);
 };
