@@ -28,8 +28,7 @@ class AdminController extends Controller {
             }
         }
     }
-
-
+    
     async index() {
         const {ctx, app} = this;
         console.log("ctx.request", ctx.params);
@@ -48,6 +47,23 @@ class AdminController extends Controller {
             ctx,
             res,
         });
+
+    }
+
+    async adminLogout() {
+
+        /**
+         *
+         * 在这里直接将cookie清掉就可以
+         * */
+        const {ctx, app, service} = this;
+
+        const res =await service.admin.adminLogout();
+        ctx.helper.success({
+            ctx,
+            res,
+        })
+
 
     }
 

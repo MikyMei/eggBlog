@@ -72,6 +72,20 @@ module.exports = {
             code: res.code ? res.code : 0,  // 0代表成功，其他代表失败
             msg: res.msg ? res.msg : "请求成功"
         }
+    },
+
+
+    filterEmptyField(params) {
+        let pam={};
+        for (let i in params){
+            if (params[i]){
+                if (i!="page"&&i!="pagesize"){
+                    pam[i]=params[i]
+                }
+
+            }
+        }
+        return pam;
     }
 
 
