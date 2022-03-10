@@ -4,7 +4,7 @@
  * @param {Egg.Application} app - egg application
  */
 module.exports = app => {
-    const {router, controller, jwt} = app;
+    const {router, controller, jwt, io} = app;
 
 
 
@@ -20,6 +20,13 @@ module.exports = app => {
      * */
     router.resources('tags', baseRouter +'/tags',jwt,  controller.tags);
 
+    /**
+     * websocket
+     * */
+
+    // io.of('/').route('server', io.controller.home.server);
+    io.of('/').route('server', io.controller.default.ping);
+    // io.route('chat', app.io.controller.chat.index);
 
     router.delete('/admin/deleteUser',jwt, controller.admin.deleteOneUser);
     router.get('/admin/findOneUser', controller.admin.findOneUser);

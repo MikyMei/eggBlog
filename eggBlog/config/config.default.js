@@ -39,6 +39,20 @@ module.exports = appInfo => {
     secret: "never"
   };
 
+  exports.io = {
+    init: {}, // passed to engine.io
+    namespace: {
+      '/': {
+        connectionMiddleware: [ 'connection' ],
+        packetMiddleware: [ 'packet' ],
+      },
+      // '/example': {
+      //   connectionMiddleware: [],
+      //   packetMiddleware: [],
+      // },
+    },
+  };
+
 
 
 
@@ -46,8 +60,7 @@ module.exports = appInfo => {
     csrf: {
       enable: false,
     },
-  }
-  ;
+  };
 
   // add your user config here
   const userConfig = {

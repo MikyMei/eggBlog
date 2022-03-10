@@ -34,3 +34,11 @@ exports.jwt = {
     enable: true,
     package: "egg-jwt"
 };
+
+
+// 启用websocket插件
+exports.io = {
+    enable: true,
+    package: 'egg-socket.io',
+};
+
