@@ -16,7 +16,11 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1646718149970_9701';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ["errorHandler", "auth"];
+  config.auth={
+    WhiteList:["admin"]
+  }
+
 
   exports.mongoose = {
     client: {
