@@ -25,7 +25,7 @@ module.exports = app => {
      * */
 
     // io.of('/').route('server', io.controller.home.server);
-    io.of('/').route('server', io.controller.default.ping);
+    io.of('/').route('chat', io.controller.default.ping);
     // io.route('chat', app.io.controller.chat.index);
 
     router.delete('/admin/deleteUser',jwt, controller.admin.deleteOneUser);

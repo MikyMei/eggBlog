@@ -16,6 +16,8 @@ class DefaultController extends Controller {
         console.log("ji");
         const { ctx, app } = this;
         const message = ctx.args[0];
+        console.log(message);
+        console.log(JSON.parse(message));
         await ctx.socket.emit('res', `Hi! I've got your message: ${message}`);
     }
 }
