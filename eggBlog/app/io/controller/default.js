@@ -13,10 +13,14 @@ const Controller = require('egg').Controller;
 
 class DefaultController extends Controller {
     async ping() {
-        console.log("ji");
         const { ctx, app } = this;
         const message = ctx.args[0];
         console.log(message);
+        ctx.socket.on("chat", function (data) {
+            console.log("socket.on接收到的", data);
+        //    把接收到的发送出去再
+            ctx.socket.broadcast.emit("chat",data)
+        })
         await ctx.socket.emit('res', `Hi! I've got your message: ${message}`);
     }
 }
