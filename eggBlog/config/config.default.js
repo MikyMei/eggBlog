@@ -46,9 +46,14 @@ module.exports = appInfo => {
         connectionMiddleware: [ 'connection' ],
         packetMiddleware: [ 'packet' ],
       },
-      '/other': {
-        connectionMiddleware: [ 'connection' ],
-        packetMiddleware: [ 'packet' ],
+      '/personalChat': {
+        connectionMiddleware: [ 'auth' ],
+        packetMiddleware: [  ],
+      },
+      // cluster 模式下，通过 redis 实现数据共享
+      redis: {
+        host: '127.0.0.1',
+        port: 6379,
       },
       // '/example': {
       //   connectionMiddleware: [],
