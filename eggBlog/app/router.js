@@ -5,7 +5,7 @@
  */
 module.exports = app => {
     const {router, controller, jwt, io} = app;
-
+    console.log("jwt",jwt);
 
 
     /**

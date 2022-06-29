@@ -25,7 +25,9 @@ class NspController extends Controller {
             console.log("目标和",target, client);
             if (!target) return;
             const msg = ctx.helper.parseMsg('exchange', payload, { client, target });
-            nsp.emit(target, msg);
+
+            // socket.broadcast.in('demo').emit(target, msg);
+            nsp.in('demo').emit(target, msg);
         } catch (error) {
             app.logger.error(error);
         }

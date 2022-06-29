@@ -39,7 +39,7 @@ class AdminService extends Service {
         }
 
         const token = app.jwt.sign({...oldUser}, app.config.jwt.secret, {
-            expiresIn: "1d"
+            expiresIn: "10d"
         });
 
 
